@@ -5,9 +5,9 @@
 \usepackage{babel}
 \usepackage[babel]{microtype}
 \usepackage[babel]{csquotes}
-\usepackage[journal={IEEE Transactions on Visualization and Computer Graphics},
-			manuscript={TVCG-2023-X},
-			editor={Dr. Doom}]{reviewresponse}
+\usepackage[journal={IEEE Transactions on Mobile Computing},
+			manuscript={TMC-2025-02-0445},
+			editor={editors}]{reviewresponse}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage[a4paper,total={160mm,245mm},left=25mm,top=25mm]{geometry}
@@ -18,11 +18,12 @@
 \setlist[detail, 1]{label=\textbullet,leftmargin=21pt,nosep}
 \usepackage[backend=biber,style=ieee,dashed=false,url=false,isbn=false,defernumbers=true,refsection=section]{biblatex}
 
-\bibliography{literature.bib}
+% \bibliography{literature.bib}
+\addbibresource{literature.bib}
 
 
-\title{My Awesome Paper Title}
-\author{Donald Duck and Mickey Mouse}
+\title{Optimizing Joint Speed and Altitude Schedule for UAV Data Collection in Low-Altitude Airspace}
+\author{Yiqian Wang, Jianping Huang, Feng Shan, Yuming Gao, Runqun Xiong and Junzhou Luo}
 
 
 \begin{document}
@@ -33,7 +34,7 @@
 \setcounter{page}{0}
 \pagestyle{fancy}
 \fancyfoot[R]{\thepage\ / \pageref{LastPage}}
-\fancyfoot[L]{Response Letter for TVCG-2023-X}
+\fancyfoot[L]{Response Letter for \manuscript}
 \fancyfoot[C]{\ }
 \input{Reviewers/Meta.tex}
 \input{Reviewers/R1.tex}
