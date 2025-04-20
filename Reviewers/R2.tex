@@ -9,17 +9,14 @@
 \end{revresponse}
 
 \begin{revcomment}
-	Alg.4 does not specify the specific implementation of ``Roulette-Wheel-Selection'', which needs to supplement pseudocode or reference standard methods.
+	Alg. 4 does not specify the specific implementation of ``Roulette-Wheel-Selection'', which needs to supplement pseudocode or reference standard methods.
 \end{revcomment}
 \begin{revresponse}
-	% We are aware that citations on Google Scholar are very important to you.
-	% Therefore, we added reference \cite{ReviewerReference}.
-	
-	% Also check out our article \cite{Besser2020}.
-	
-	% \printpartbibliography{ReviewerReference,Besser2020}
-	
-	% And btw, your Comment~\ref{cmt:work-not-good} was mean!
+	Thanks for your suggestion.
+	We have added a brief description of the Roulette-Wheel-Selection method in the revised manuscript.
+	\begin{changes}
+		Specifically, in \textbf{Roulette-Wheel-Selection}, the vertex $(\varphi+1, j')$ is selected if $\sum_{j''=0}^{j'-1}{p(\varphi,j,j'')}\leq \text{rand}() < \sum_{j''=0}^{j'}{p(\varphi,j,j'')}$, where $\text{rand}()$ generates a random number in $[0,1)$.
+	\end{changes}
 \end{revresponse}
 
 \begin{revcomment}
@@ -68,6 +65,24 @@
 	(7) Line 2 of Algorithm 3, why set 20 to $Z$?
 \end{revcomment}
 \begin{revresponse}
-	
+	% todo 要不要把对应部分复制过来
+	Thanks for your detailed suggestions.
+	In response, we have made the following revisions.
+
+	For points (1) to (4), we have improved the phrasing and table in the manuscript to mamke it more consistent and easier to read.
+
+	For point (5), we would like to clarify that in Definition 1 in the manuscript, the condition $k<k'$ is defined. Additionally, in Equation (11), the condition $b_k < b_{k'}$ already implicitly ensures that $k\neq k'$.
+	As for Equation (12), we have removed it along with its related content to improve the overall structure and clarity of the manuscript.
+
+	For point (6), $\mathbb{S}$ is defined as a data structure that encapsulates essential sensor information. To improve clarity and facilitate readers' understanding, we have revised the manuscript by relocating the description of $\mathbb{S}$ closer to Algorithm 1 and 2.
+	\begin{changes}
+		For details, Alg. 1 takes the necessary sensor information as input and returns the optimal horizontal energy consumption.
+		For simplicity, we denote these pieces of sensor information (such as $l_i$ and $r_i$) by $\mathbb{S}$.
+	\end{changes}
+
+	For point (7), we have added an explanation in the revised manuscript.
+	\begin{changes}
+		Here, $Z$ is set to 20 to balance solution quality and computational efficiency.
+	\end{changes}
 \end{revresponse}
 
