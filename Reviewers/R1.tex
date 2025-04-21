@@ -5,25 +5,42 @@
 	This paper fails to justify the selection of heuristic factors $(\alpha, \beta)$ in SSF-ACO. You should conduct grid search experiments to demonstrate parameter sensitivity or cite theoretical foundations for ACO parameter tuning.
 \end{revcomment}
 \begin{revresponse}
-	We agree that the title is somewhat misleading.
-	We therefore changed it in the current version of the manuscript.
+
 \end{revresponse}
 
 \begin{revcomment}
 	Current experiments only cover small-scale scenarios ($\leq 30$ nodes), it should extend to more nodes to should the scalibility of algorithm.
 \end{revcomment}
 \begin{revresponse}
-	We totally agree. We also added the following to the new version of the manuscript
-	\begin{changes}
-		This really important sentence was added to the paper.
-	\end{changes}
+	
 \end{revresponse}
 
 \begin{revcomment}
 	The assumptions of linear GN deployment and complete GN knowledge are restrictive and not sufficiently justified. Please provide a detailed discussion of the assumptions, including their implications for real-world applicability and potential extensions.
 \end{revcomment}
 \begin{revresponse}
-	
+	We appreciate the reviewer's comment regarding the assumptions of linear GN deployment and complete GN knowledge.
+	We would like to provide additional details about GN deployment and GN knowledge, 
+	% todo 文中修改对应部分
+	\textcolor{red}{as well as a discussion of these assumptions in Section 1 of our revised manuscript.}
+
+	\textbf{Linear GN deployment.}
+	The linear configuration of GNs represents a reasonable and commonly utilized setup in real-world systems.
+	This deployment pattern often arises in infrastructure monitoring scenarios.
+	For instance, in the power line~\cite{powerline,transmission-line}, UAVs are dispatched to autonomously collect data from sensors on the transmission tower.
+	Similarly, in the oil and gas industry~\cite{pipeline}, UAVs are used to fly along pipelines for inspection activities.
+	In addition, sensors can be deployed along rivers~\cite{river} and coasts~\cite{coast} to capture diel and seasonal fluctuations, with the purposes of ecological monitoring, flood warning, and scientific research.
+
+	In fact, the effectiveness of such linear GN deployment has already been demonstrated in industrial applications to reduce costs, improve work efficiency, and avoid hazardous manual tasks.
+	For instance, DJI has successfully implemented UAV-enabled solutions in scenarios such as long-distance pipelines~\cite{DJI-pipeline}, power transmission line in plateau regions~\cite{DJI-powerline}, and river ecosystems~\cite{DJI-river}, where the UAV trajectories can be regarded as linear or the combination of multiple straight-line segments.
+
+	\textbf{Complete GN knowledge.}
+	Sensor (\emph{i. e.,} GN) knowledge mainly includes information such as position, amount of data to be collected, transmission rate, and data transmission range.
+	(1) In the online problem, each sensor has a control communication range, which is broader than data transmission range.% and is used to send sensor information to the UAV. 
+	When the UAV enters the sensor's control communication range, it can detect the sensor and receives a response containing information such as the amount of data and the sensor's position.
+	(2) There is a proportional relationship between the radius of the data transmission range and the control communication range. %, which is primarily determined by the sensor's transmission power.
+	Based on the distance between the sensor and the UAV at the moment the response is received, the radius of the data transmission range can be estimated.
+	(3) The sensor position is fixed, and thus, it can be obtained during the initial deployment and periodic maintenance. This allows for the calibration of sensor positions.
 \end{revresponse}
 
 \begin{revcomment}
@@ -40,5 +57,7 @@
 	Thank you for the comment.
 	We have carefully reviewed the tense usasge throughout the manuscript and corrected the inconsistent expressions to ensure consistency. Additionally, we have standardized the website reference format according to IEEE Reference Guide.
 	% todo 这里要不要把修改的部分复制过来
+	% todo 标明是哪几个[xx]
 \end{revresponse}
 
+\printpartbibliography{powerline,pipeline,transmission-line,river,coast,DJI-powerline,DJI-pipeline,DJI-river}
