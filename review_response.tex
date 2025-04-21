@@ -16,7 +16,7 @@
 \usepackage[shortlabels]{enumitem}
 \newlist{detail}{itemize}{3}
 \setlist[detail, 1]{label=\textbullet,leftmargin=21pt,nosep}
-\usepackage[backend=biber,style=ieee,dashed=false,url=false,isbn=false,defernumbers=true,refsection=section]{biblatex}
+\usepackage[backend=biber,style=ieee,dashed=false,url=true,isbn=false,defernumbers=true,refsection=section]{biblatex}
 \usepackage{romannum}
 \usepackage{amsmath, amsfonts}
 \usepackage{textcomp}
@@ -35,6 +35,7 @@
 
 % Cover Letter
 \input{cover_letter.tex}
+\pagenumbering{arabic} % 改为阿拉伯数字页码
 \setcounter{page}{0}
 \pagestyle{fancy}
 \fancyfoot[R]{\thepage\ / \pageref{LastPage}}
