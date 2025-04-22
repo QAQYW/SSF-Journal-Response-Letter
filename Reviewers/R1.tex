@@ -36,11 +36,18 @@
 
 	\textbf{Complete GN knowledge.}
 	Sensor (\emph{i. e.,} GN) knowledge mainly includes information such as position, amount of data to be collected, transmission rate, and data transmission range.
-	(1) In the online problem, each sensor has a control communication range, which is broader than data transmission range.% and is used to send sensor information to the UAV. 
+	(1) In the online problem, each sensor has an additional control communication range, which covers a larger area than the data transmission range.
 	When the UAV enters the sensor's control communication range, it can detect the sensor and receives a response containing information such as the amount of data and the sensor's position.
-	(2) There is a proportional relationship between the radius of the data transmission range and the control communication range. %, which is primarily determined by the sensor's transmission power.
+	(2) There is a proportional relationship between the radius of the data transmission range and the control communication range.
 	Based on the distance between the sensor and the UAV at the moment the response is received, the radius of the data transmission range can be estimated.
 	(3) The sensor position is fixed, and thus, it can be obtained during the initial deployment and periodic maintenance. This allows for the calibration of sensor positions.
+
+	\textbf{Discussion in the manuscript.}
+	We have extended the discussion of these assumptions in Section 6 of the revised manuscript as follows.
+	\begin{changes}
+		The UAV keeps broadcasting `Probe' message during the flight to detect sensors. Once receiving the `Probe' message, the sensor sends back an `ACK' message, which contains its position, the amount of data, and transmission characteristics. Note that each sensor sends `ACK' message only once. This partial information availability fundamentally changes the nature of our optimization problem, requiring real-time 
+		decision-making based on local information.
+	\end{changes}
 \end{revresponse}
 
 \begin{revcomment}
