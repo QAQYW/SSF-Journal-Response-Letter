@@ -70,7 +70,7 @@
 	The dynamic nature of the sensor is not considered, such as movement, inaccurate position, failure and other problems.
 \end{revcomment}
 \begin{revresponse}
-	We appreciate the reviewer's comment on the dynamics of sensors, which highlights important aspects that could influence the effectiveness the UAV schedule.
+	We appreciate the reviewer's comment on the dynamics of sensors, which highlights important aspects that could influence the effectiveness the UAV scheduling.
 	In the following, we will discuss the ground nodes (GNs) mobility, inaccurate position, failures, and unstable communication environment.
 
 	\textbf{GN mobility.}
@@ -82,15 +82,15 @@
 
 	\textbf{Inaccurate position.}
 	The proposed algorithm relies on the precise sensor positions.
-	However, the inaccurate sensor localization leads to discrepancies between the UAV's schedule and actual environment.
+	However, the inaccurate sensor localization leads to discrepancies between the UAV scheduling and actual environment.
 	In our future, we intend to employ more advanced relative positioning techniques to reduce localization inaccuracy and incorporate error-tolerant strategies to improve the system's robustness and reliability.
 
-	\textbf{Failure.}
+	\textbf{Failures.}
 	Failures may occur either before or during data transmission.
 	Failures before transmission will result in the sensor being undetectable by the UAV.
 	On the other hand, failures during the transmission process will lead to a disruption in the connection between the UAV and the sensor.
 	The UAV will attemp to reconnect and, after reaching the maximum number of reconnection attempts, will abandon the connection.
-	Regardless of whether reconnection is successful, the schedule will be re-planned to ensure energy efficiency.
+	Regardless of whether reconnection is successful, the scheduling will be re-planned to ensure energy efficiency.
 	% todo 在论文online那节加一段描述
 
 	\textbf{Unstable communication environment.}
