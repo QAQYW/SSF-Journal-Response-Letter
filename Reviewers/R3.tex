@@ -27,7 +27,7 @@
 \end{revcomment}
 \begin{revresponse}
 	We appreciate the reviewer's insightful comment.
-	We agree that the term ``near-optimal'' was not precise. Our intention was to indicate that SSF-ACO-Online performs closely to the offline algorithm SSF-ACO. We have revised the abstract to clarify this point and removed the term ``near-optimal'' to avoid confusion.
+	We recognize that the term ``near-optimal'' was not precise. Our intention was to indicate that SSF-ACO-Online performs closely to the offline algorithm SSF-ACO. We have revised the abstract to clarify this point and removed the term ``near-optimal'' to avoid confusion.
 	\begin{changes}
 		Extensive simulations demonstrate that SSF-ACO significantly outperforms baseline approaches in energy efficiency, and SSF-ACO-Online achieves comparable performance with energy consumption 1.24\% higher than offline counterpart in average.
 	\end{changes}
@@ -37,7 +37,25 @@
 	The robustness of the SSF-ACO and SSF-ACO-Online algorithms to network dynamics (e.g., node mobility) is not evaluated. Include tests under time-varying conditions to demonstrate adaptability.
 \end{revcomment}
 \begin{revresponse}
-	
+	We appreciate the reviewer's comment on the network dynamics.
+	In the following, we will discuss the ground nodes (GNs) mobility, failures, and the computational latency of SSF-ACO-Online.
+
+	\textbf{GN mobility.}
+	GN mobility is an important factor in various UAV-assisted systems.
+	However, our current work focuses on data collection from stationary sensors.
+	In the scenarios we consider, the sensors are fixed in the environment to monitor infrastructures or natural conditions.
+	Admittedly, a number of existing studies~\cite{GNmob1, GNmob2, GNmob3, GNmob4} have investigated GN mobility.
+	In these studies, GNs typically refer to mobile user devices with significant movement, such as user-carried devices~\cite{GNmob1,GNmob2} or vehicles~\cite{GNmob3,GNmob4}, which are fundamentally different from the stationary GNs considered in our work.
+
+	\textbf{Failures.}
+	Failures may occur either before or during data transmission.
+	Failures before transmission will result in the sensor being undetectable by the UAV.
+	On the other hand, failures during the transmission process will lead to a disruption in the connection between the UAV and the sensor.
+	The UAV will attemp to reconnect and, after reaching the maximum number of reconnection attempts, will abandon the connection.
+	Regardless of whether reconnection is successful, the scheduling will be re-planned to ensure energy efficiency.
+
+	\textbf{The computational latency of SSF-ACO-Online.}
+	% todo complete
 \end{revresponse}
 
 \begin{revcomment}
@@ -54,3 +72,4 @@
 	
 \end{revresponse}
 
+\printpartbibliography{GNmob1,GNmob2,GNmob3,GNmob4}
