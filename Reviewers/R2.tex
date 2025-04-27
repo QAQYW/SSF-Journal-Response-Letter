@@ -70,18 +70,27 @@
 	The dynamic nature of the sensor is not considered, such as movement, inaccurate position, failure and other problems.
 \end{revcomment}
 \begin{revresponse}
-	We appreciate the reviewer's comment on the dynamics of sensors.
+	We appreciate the reviewer's comment on the dynamics of sensors, which highlights important aspects that could influence the effectiveness the UAV schedule.
 
 	\textbf{Ground nodes (GNs) mobility.}
 	GN mobility is an important factor in various UAV-assisted systems.
 	However, our current work focuses on data collection from stationary sensors.
 	In the scenarios we consider, the sensors are fixed in the environment to monitor infrastructures or natural conditions.
-	Admittedly, a number of existing studies~\cite{GNmob1, GNmob2, GNmob3, GNmob4} have investigated GN mobility, primarily in the context of UAV-assisted task offloading or crowd sensing.
-	In such studies, GNs typically refer to mobile user devices with significant movement, such as user-carried devices~\cite{GNmob1,GNmob2} or vehicles~\cite{GNmob3,GNmob4}, which are fundamentally different from the stationary GNs considered in our work.
+	Admittedly, a number of existing studies~\cite{GNmob1, GNmob2, GNmob3, GNmob4} have investigated GN mobility. %, primarily in the context of UAV-assisted task offloading or crowd sensing.
+	In these studies, GNs typically refer to mobile user devices with significant movement, such as user-carried devices~\cite{GNmob1,GNmob2} or vehicles~\cite{GNmob3,GNmob4}, which are fundamentally different from the stationary GNs considered in our work.
 
 	\textbf{Inaccurate position.}
+	The proposed algorithm relies on the precise sensor positions.
+	However, the inaccurate sensor localization leads to discrepancies between the UAV's schedule and actual environment.
+	In our future, we intend to employ more advanced relative positioning techniques to reduce localization inaccuracy and incorporate error-tolerant strategies to improve the system's robustness and reliability.
 
-	\textbf{Failure.}
+	\textbf{The failure.}
+	Failures may occur either before or during data transmission.
+	Failures before transmission will result in the sensor being undetectable by the UAV.
+	On the other hand, failures during the transmission process will lead to a disruption in the connection between the UAV and the sensor.
+	The UAV will attemp to reconnect and, after reaching the maximum number of reconnection attempts, will abandon the connection.
+	Regardless of whether reconnection is successful, the schedule will be re-planned to ensure energy efficiency.
+	% todo 在论文online那节加一段描述
 
 \end{revresponse}
 
