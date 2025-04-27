@@ -71,8 +71,9 @@
 \end{revcomment}
 \begin{revresponse}
 	We appreciate the reviewer's comment on the dynamics of sensors, which highlights important aspects that could influence the effectiveness the UAV schedule.
+	In the following, we will discuss the ground nodes (GNs) mobility, inaccurate position, failures, and unstable communication environment.
 
-	\textbf{Ground nodes (GNs) mobility.}
+	\textbf{GN mobility.}
 	GN mobility is an important factor in various UAV-assisted systems.
 	However, our current work focuses on data collection from stationary sensors.
 	In the scenarios we consider, the sensors are fixed in the environment to monitor infrastructures or natural conditions.
@@ -84,13 +85,18 @@
 	However, the inaccurate sensor localization leads to discrepancies between the UAV's schedule and actual environment.
 	In our future, we intend to employ more advanced relative positioning techniques to reduce localization inaccuracy and incorporate error-tolerant strategies to improve the system's robustness and reliability.
 
-	\textbf{The failure.}
+	\textbf{Failure.}
 	Failures may occur either before or during data transmission.
 	Failures before transmission will result in the sensor being undetectable by the UAV.
 	On the other hand, failures during the transmission process will lead to a disruption in the connection between the UAV and the sensor.
 	The UAV will attemp to reconnect and, after reaching the maximum number of reconnection attempts, will abandon the connection.
 	Regardless of whether reconnection is successful, the schedule will be re-planned to ensure energy efficiency.
 	% todo 在论文online那节加一段描述
+
+	\textbf{Unstable communication environment.}
+	The changes in the communication environment may lead to fluctuations in the transmission rate.
+	When the UAV first detects the sensor, it will receive the sensor's guaranteed minimum transmission rate included the sensor's `ACK' message.
+	When the guaranteed transmission rate is not met, the UAV's speed and altitude scheduling will be re-planned by our algorithm to adapt to the environment changes. 
 
 \end{revresponse}
 
