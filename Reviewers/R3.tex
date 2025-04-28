@@ -6,6 +6,21 @@
 \end{revcomment}
 \begin{revresponse}
 	% todo Introduction
+	Thanks for the valuable suggestion.
+	We have revised Section 1 to better highlight the challenge introduced by this overlapping range relationship between sensors, and to underscore their practical relevance in real-world scenarios.
+
+	The revised description of this relationship:
+	\begin{changes}
+		This altitude-dependent coverage creates intricate spatial relationships between sensors, manifesting in various overlapping patterns: partial overlap, full containment, reverse containment, and disjointness.
+		Moreover, these relationships become even more complex as communication range changes with altitude, creating challenges that have not been fully addressed in previous research.
+		For example, in Fig.~1, as the altitude increases, sensor $S_1$ initially overlaps with $S_2$, but eventually becomes fully contained by $S_2$.
+		Such overlapping range relationship better captures the complexity of real-world scenarios and provides practical value for UAV-assisted data collection.
+		Capturing and fully exploiting these altitude-dependent ranges is crucial, since it enables the data from a single sensor to be collected across multiple sessions and fundamentally influences the order of data collection.
+	\end{changes}
+	The third challenge in the revised manuscript:
+	\begin{changes}
+		Due to the complex overlapping patterns of sensor data transmission ranges, the UAV is often simultaneously located within the ranges of multiple sensors. Consequently, determining the optimal data collection sequence becomes highly challenging.
+	\end{changes}
 \end{revresponse}
 
 \begin{revcomment}
