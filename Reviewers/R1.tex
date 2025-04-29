@@ -33,7 +33,7 @@
 	For instance, DJI has successfully implemented UAV-enabled solutions in scenarios such as long-distance pipelines~\cite{DJI-pipeline}, power transmission line in plateau regions~\cite{DJI-powerline}, and river ecosystems~\cite{DJI-river}, where the UAV trajectories can be regarded as linear or the combination of multiple straight-line segments.
 
 	\textbf{Complete GN knowledge.}
-	Sensor (\emph{i. e.,} GN) knowledge mainly includes information such as position, amount of data to be collected, transmission rate, and data transmission range.
+	Sensor knowledge mainly includes information such as position, amount of data to be collected, transmission rate, and data transmission range.
 	(1) In the online problem, each sensor has an additional control communication range, which covers a larger area than the data transmission range.
 	When the UAV enters the sensor's control communication range, it can detect the sensor and receives a response containing information such as the amount of data and the sensor's position.
 	(2) There is a proportional relationship between the radius of the data transmission range and the control communication range.
@@ -53,7 +53,20 @@
 \end{revcomment}
 \begin{revresponse}
 	Thanks for your comment.
-	\textcolor{red}{linear GN distribution: 2D or 1D?}
+	Our current focuses on the linear (2D) GN distribution, including power transmission lines, roads, pipelines, river and coast. By integrating advanced trajectory planning methods, our algorithms can be extended to 3D GN layout.
+
+	Specifically, we first apply a trajectory planning algorithm to optimize the UAV's flight path and avoid collisions.
+	The area of UAV trajectory planning and collision avoidance has been extensively studied in recent years.
+	The distance travelled from the starting point to any location along the trajectory is treated as the horizontal coordinate of that location.
+	Along this trajectory, we can then use SSF-ACO algorithm to jointly optimize speed and altitude scheduling.
+	
+	Although promising, this approach to extending the 3D GN layout remains subject to certain limitations.
+	Jointly optimizing the 3D trajectory and speed scheduling is expected to have a better performance.
+	Furthermore, the increased computational complexity associated with 3D scheduling problems presents additional challenges.
+	However, these issue fall within a broader area that extends beyond the focus of the current work.
+	Addressing them remains also one of our future research directions.
+	In this work we concentrate on the optimization of speed and altitude scheduling, and demonstrate compatibility with existing trajectory planning algorithms.
+	% todo complete
 \end{revresponse}
 
 \begin{revcomment}
