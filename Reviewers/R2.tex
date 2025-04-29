@@ -24,17 +24,21 @@
 	The vertical energy consumption is assumed to be linear related to the altitude difference, which seems oversimplified, more justification is needed.
 \end{revcomment}
 \begin{revresponse}
-	% todo 可以部署非线性，选线性的原因
 	Thanks for the comment.
-	Research~\cite{vertical-assumption} serves as the theoretical basis for this ``linear assumption''.
+	We would like to clarify that the proposed algorithm is applicable to arbitrary forms of vertical energy consumption models to achieve more accurate energy estimations.
+	The ``linear assumption'' adopted in the manuscript is intended solely to simplify computations and to maintain focus on the problem under study, rather than to deliberately obtain more favorable results.
+
+	% todo 下面要不要保留
+	% todo 原文如果有改动，在这里加上
+	Moreover, research~\cite{vertical-assumption} serves as the theoretical basis for this ``linear assumption''.
 	According to~\cite{vertical-assumption}, the following equation fits well with the theoretical derivation,
 	\begin{equation}
-		p_V = c_{0,V} + c_{1,V}v + c_{2,V}v^2,
+		p_v = c_{0,v} + c_{1,v}v + c_{2,v}v^2,
 	\end{equation}
-	where $p_V$ is the vertical power consumption, $c_{0,V}$, $c_{1,V}$ and $c_{2,V}$ are coefficients, and $v$ is the climbing or descending speed of the UAV.
+	where $p_v$ is the vertical power consumption, $c_{0,v}$, $c_{1,v}$ and $c_{2,v}$ are coefficients, and $v$ is the climbing or descending speed of the UAV.
 	In our manuscript, we assume that the UAV climbs or descends at a constant speed and flies in a stable environment.
 	Therefore, the vertical power consumption is constant.
-	For a certain altitude difference $\Delta h$, the vertical energy consumption is $E_V=\frac{p_V\Delta h}{v}$, which supports the ``linear assumption''.
+	For a certain altitude difference $\Delta h$, the vertical energy consumption is $E_v=\frac{p_v\Delta h}{v}$, which supports the ``linear assumption''.
 	Furthermore, similar assumptions have also been adopted in previous research~\cite{mgh}.
 \end{revresponse}
 
