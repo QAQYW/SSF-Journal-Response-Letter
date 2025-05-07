@@ -72,8 +72,69 @@
 \end{revcomment}
 \begin{revresponse}
 	Thanks for your suggestion.
-	We have revised the color scheme and marker symbols to make the curves in Figure 8 in the revised manuscript, and also adjusted the layout of it to improve clarity.
-	% todo 新图复制过来
+	We have revised the color scheme and marker symbols to make the curves in Figure 8 in the revised manuscript (Figure~\ref{fig:exps} in the following), and also adjusted the layout of it to improve clarity.
+	% ? 这里的图看着比原文中小，可能是左右页边距不同
+	\captionsetup[subfloat]{font=footnotesize, labelfont={rm}, textfont={rm}}
+	\begin{figure*}[h]
+		\setcounter{subfigure}{0}
+		\subfloat[\footnotesize{The number of sensors.}]{
+			\centering
+			\includegraphics[width=.31\textwidth]{fig/exp_number_40.pdf}
+			\label{subfig:number}
+		}
+		\hfill
+		\subfloat[\footnotesize{The upper bound of coefficient of required time for data collection.}]{
+			\centering
+			\includegraphics[width=.31\textwidth]{fig/exp_time.pdf}
+			\label{subfig:time}
+		}
+		\hfill
+		\subfloat[\footnotesize{The upper bound of height coefficient.}]{
+			\centering
+			\includegraphics[width=.31\textwidth]{fig/exp_height.pdf}
+			\label{subfig:height}
+		}
+		\hfill
+		\subfloat[\footnotesize{The upper bound of width coefficient.}]{
+			\centering
+			\includegraphics[width=.31\textwidth]{fig/exp_width.pdf}
+			\label{subfig:width}
+		}
+		\hfill
+		\subfloat[\footnotesize{The upper bound of swell coefficient of data transmission range.}]{
+			\centering
+			\includegraphics[width=.31\textwidth]{fig/exp_swell.pdf}
+			\label{subfig:swell}
+		}
+		\hfill
+		\subfloat[\footnotesize{The finest granularity of altitude change for UAV.}]{
+			\centering
+			\includegraphics[width=.31\textwidth]{fig/exp_gran.pdf}
+			\label{subfig:gran}
+		}
+		\hfill
+		\subfloat[\footnotesize{The vertical consumption coefficient.}]{
+			\centering
+			\includegraphics[width=.31\textwidth]{fig/exp_vertical.pdf}
+			\label{subfig:vertical}
+		}
+		\hfill
+		\subfloat[
+			\footnotesize{The radius ratio of the control communication range to the data transmission range of a sensor.}
+		]{
+			\centering
+			\includegraphics[width=.31\textwidth]{fig/exp_online.pdf}
+			\label{subfig:online}
+		}
+		\hspace{.05\textwidth}
+		\captionsetup[subfloat]{labelformat=empty} % 临时取消子图编号
+		\subfloat[]{
+			\includegraphics[width=.28\textwidth]{fig/legend.pdf}
+		}
+		\captionsetup[subfloat]{labelformat=parens} % 恢复子图编号
+		\caption{Algorithm performance comparisons in UAV energy consumption.}
+		\label{fig:exps}
+	\end{figure*}
 \end{revresponse}
 
 \begin{revcomment}
