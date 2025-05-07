@@ -20,6 +20,7 @@
 	\begin{changes}
 		Due to the complex overlapping patterns of sensor data transmission ranges, the UAV is often simultaneously located within the ranges of multiple sensors. Consequently, determining the optimal data collection sequence becomes highly challenging.
 	\end{changes}
+	% todo contribution要不要改
 \end{revresponse}
 
 \begin{revcomment}
@@ -27,6 +28,7 @@
 \end{revcomment}
 \begin{revresponse}
 	% todo System Model
+	% todo 离得越远，传输速率越小。往guaranteed transmission rate方向靠
 \end{revresponse}
 
 \begin{revcomment}
@@ -83,6 +85,19 @@
 \end{revcomment}
 \begin{revresponse}
 	% todo Introduction
+	% todo 改这句话
+	We have improved the discussion about learning-based algorithms for UAV-assisted systems in Section 2.3.
+	\begin{changes}
+		Learning-based methods, particularly deep learning (DL) and RL, gained popularity in recent years, as they learned complex parameters or action policies during the training process.
+		In UAV-assisted mobile edge computing systems, Lin \etal~\cite{b-DL} proposed a parametrized dueling deep Q-network to maximize the UAV's energy efficiency.
+		The problem was formulated as a mixed-integer nonlinear programming (MINLP) problem, which facilitated the modeling of problems involving both continuous variables (\eg trajectory) and discrete variables (\eg data collection decision and task offloading decision).
+		To maximize the total throughput and energy efficiency, Chen \etal~\cite{b-RL} formulated long-term UAV-aided data collection problem as a Markov Decision Process (MDP), and addressed it by a multi-agent DRL algorithm.
+		However, the maximum number of ground nodes that could be served in \cite{b-DL} and \cite{b-RL} was only 6 and 8, respectively, as the extremely high computational complexity became unacceptable when the number of ground nodes increased.
+		Hao \etal~\cite{hao-minlp} formulated a task offloading problem in a UAV-assisted mobile edge computing system as a MINLP, and then transformed it into a MDP.
+		The problem was solved by a DRL algorithm.
+		Zhong \etal~\cite{zhong-minlp} also applied a similar approach to address a task offloading and resource allocation problem.
+		Despite their successful application to larger-scale problems, challenges still remain in the context of the JUSAS problem, particularly in modeling the environment and designing the reward function, including aligning the reward signal with the objective and dealing with sparse rewards.
+	\end{changes}
 \end{revresponse}
 
-\printpartbibliography{GNmob1,GNmob2,GNmob3,GNmob4}
+\printpartbibliography{GNmob1,GNmob2,GNmob3,GNmob4,b-DL,b-RL,hao-minlp,zhong-minlp}
