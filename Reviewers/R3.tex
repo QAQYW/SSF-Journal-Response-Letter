@@ -63,8 +63,35 @@
 	The UAV will attemp to reconnect and, after reaching the maximum number of reconnection attempts, will abandon the connection.
 	Regardless of whether reconnection is successful, the scheduling will be re-planned to ensure energy efficiency.
 
-	\textcolor{red}{\textbf{The computational latency of SSF-ACO-Online.}}
-	% todo complete
+	\textbf{The computational latency of SSF-ACO-Online.}
+	We have reported the cumulative computational time of SSF-ACO-Online and the corresponding UAV flight durations.
+	These results are summarized in Table~\ref{tb:runtime2} (Table 4 in the manuscript) and discussed in the revised manuscript as follows to demonstrate the suitability of SSF-ACO-Online.
+
+	\begin{table}[h]
+		\renewcommand{\arraystretch}{1.2}
+		\centering
+		\caption{Computation Time of SSF-ACO and SSF-ACO-Online Compared with UAV Flight Duration in Online Scheduling (in Seconds)}
+		\label{tb:runtime2}
+		\centering
+		\begin{tabular}{*{9}{c}}
+			\hline
+			$n$ & 5 & 10 & 15 & 20 & 25 & 30 & 35 & 40 \\
+			\hline
+			$T_f$ & 513.73 & 1107.11 & 1502.68 & 2084.67 & 2675.47 & 2997.83 & 3519.72 & 4119.79 \\
+			$T_{off}$ & 1.58 & 5.60 & 12.01 & 19.11 & 32.32 & 51.01 & 64.60 & 92.73 \\
+			$T_{on}$ & 0.99 & 1.81 & 2.91 & 3.09 & 3.49 & 3.87 & 5.04 & 5.80 \\
+			$T_{on} / T_f$ & 0.19\% & 0.16\% & 0.19\% & 0.15\% & 0.13\% & 0.13\% & 0.14\% & 0.14\% \\
+			\hline
+		\end{tabular}
+	\end{table}
+
+	\begin{changes}
+		Finally, we analyze the computational latency of SSF-ACO-Online.
+		Table~4 reports the duration of UAV flights $T_f$ under online problem, along with the computation time of SSF-ACO-Online $T_{on}$, and that of SSF-ACO $T_{off}$ in the corresponding offline problem.
+		Across varying numbers of sensors, the computation times of SSF-ACO-Online stay under 6 seconds and constitute no more than 0.19\% of the corresponding UAV flight duration.
+		This demonstrates the suitability of SSF-ACO-Online for online applications.
+		Since the active sensor list only maintains those sensors that have been discovered but not yet completely collected, though invoked SSF-ACO multiple times, SSF-ACO-Online has a cumulative computation time significantly shorter than that of SSF-ACO.
+	\end{changes}
 \end{revresponse}
 
 \begin{revcomment}
