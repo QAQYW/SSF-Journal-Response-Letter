@@ -20,15 +20,44 @@
 	\begin{changes}
 		Due to the complex overlapping patterns of sensor data transmission ranges, the UAV is often simultaneously located within the ranges of multiple sensors. Consequently, determining the optimal data collection sequence becomes highly challenging.
 	\end{changes}
-	% todo contribution要不要改
 \end{revresponse}
 
 \begin{revcomment}
 	The system model assumes an idealized scenario without incorporating real-world path loss effects (e.g., fading, shadowing). This limits the practical use of the proposed algorithm.
 \end{revcomment}
 \begin{revresponse}
-	% todo System Model
-	% todo 离得越远，传输速率越小。往guaranteed transmission rate方向靠
+	Thank you for your comment.
+	We have added Subsection 3.1.2 ``Communication Model'', where the probabilistic line-of-sight model is employed to model the communication between the UAV and sensors.
+	The revised manuscript is shown below.
+	\begin{changes}
+		The UAV collects data from sensors via sensor-to-UAV links.
+		In this work, the probabilistic LoS channel model is employed~\cite{a-constspeed2}
+		The channel coefficient $H_i$ between the UAV and sensor $s_i$ at time $t$ can be represented as follows:
+		\begin{equation}
+			H_i(t) = \sqrt{\beta_i(t)}\widetilde{H}_i(t), 
+		\end{equation}
+		where $\widetilde{H}_i(t)$ denotes the complex coefficient of small-scale fading with $E[|\widetilde{H}_i(t)|^2]=1$, and $\beta_i(t)$ is the coefficient for the shadowing and path loss.
+		Generally, $\beta_i(t)$ depends on LoS or non-LoS link condition~\cite{Zeng},
+		\begin{equation}
+		\beta_i(t)=\begin{cases}
+			\widetilde{\beta}/d_i^\gamma(t), & \mbox{LoS link,} \\
+			\kappa\widetilde{\beta}/d_i^\gamma(t), & \mbox{non-LoS link,} 
+		\end{cases}
+		\end{equation}
+		where $\widetilde{\beta}$ reflects the path loss at unit distance, $d_i(t)$ represents the distance between the UAV and $s_i$, $\gamma$ is the path loss exponent, and $\kappa\in(0,1)$ captures the attenuation effect under the non-LoS conditions.
+
+		Let $P^{LoS}_i(t)$ be the LoS probability between the UAV and sensor $s_i$.
+		The expectation of the channel power gain is given as follows~\cite{a-constspeed2}:
+		\begin{equation}
+			E[|H_i(t)|^2] = P^{LoS}_i(t)\frac{\widetilde{\beta}}{d_i^{\gamma}(t)} + (1-P^{LoS}_i(t))\frac{\kappa\widetilde{\beta}}{d_i^{\gamma}(t)}.
+		\end{equation}
+		Finally, the average transmission rate between the UAV and sensor $s_i$ at time $t$ can be given as~\cite{trans-rate}:
+		\begin{equation}
+			R_i(t)=B\log_2(1+\frac{GE[|H_i(t)|^2]p_i}{N_0B}),
+			\label{eq:rate}
+		\end{equation}
+		where $B$ is the bandwidth of the channel, $G$ denotes the antenna gain, $p_i$ denotes the transmission power, and $N_0$ represents the noise variance.
+	\end{changes}
 \end{revresponse}
 
 \begin{revcomment}
@@ -98,12 +127,42 @@
 	The paper uses multiple important symbols, but a comprehensive table of symbols and definitions is missing. Adding such a table would enhance readability and help readers locate information more easily.
 \end{revcomment}
 \begin{revresponse}
-	\textcolor{red}{
-	Thanks you for the suggestion. We have added more important symbols and definitions in Table 1 to make it more comprehensive. The revised Table 1 is as follows.
-	}
-	\begin{changes}
-		% todo 完善Table 1后复制到这
-	\end{changes}
+	Thanks you for the suggestion. We have added more important symbols and definitions in Table 1 in the manuscript to make it more comprehensive. The revised version is presented in Table~\ref{tb:notation} below.
+	% \begin{changes}
+	\begin{table}[h]
+		\caption{Major notations}
+		\label{tb:notation}
+		\centering
+		\begin{tabular}{c>{\raggedright\arraybackslash}p{10cm}}
+			\toprule
+			Notation  & \multicolumn{1}{c}{Explanation} \\
+			\midrule
+			$D$       & The destination point. \\
+			$s_i$     & $i$-th sensor. \\
+			$h_j$     & $j$-th altitude. \\
+			$l_i, l_{i,h}$  & Entering boundary point of $s_i$. \\
+			$r_i, r_{i,h}$  & Exiting boundary point of $s_i$. \\
+			$R_i$     & Transmission rate of $s_i$. \\
+			$t_i$     & Required transmission duration of $s_i$. \\
+			$\mathbb{S}$    & Data structure including all sensor information. \\
+			$f(d)$    & The time when UAV reaching position $d$. \\
+			$v, v(d)$ & Speed of UAV at position $d$. \\
+			$g(d)$    & Altitude of UAV at position $d$. \\
+			$p(v)$    & UAV power consumption at forward speed $v$. \\
+			$E_f$     & Horizontal energy consumption of UAV. \\
+			$E_v$     & Vertical energy consumption of UAV. \\
+			$E$       & Total energy consumption of UAV. \\
+			$b_k$     & $k$-th boundary point. \\
+			$C_k$     & $k$-th cell, $C_k=(b_k,b_{k+1})$. \\
+			$U_S(i)$  & $=0$, sensor $s_i$ is inactive; $=1$, $s_i$ is active. \\
+			$U_C(k)$  & $=0$, cell $C_k$ is unavailable; $=1$, $C_k$ is available. \\
+			$S[k,k']$ & $=(b_k,b_{k'})$, path interval between $b_k$ and $b_{k'}$. \\
+			$D[k,k']$ & Effective distance of $S[k,k']$. \\
+			$T[k,k']$ & Effective time of $S[k,k']$. \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	% \end{changes}
 \end{revresponse}
 
 \begin{revcomment}
@@ -136,4 +195,4 @@
 	\end{changes}
 \end{revresponse}
 
-\printpartbibliography{GNmob1,GNmob2,GNmob3,GNmob4,b-DL,b-RL,hao-minlp,zhong-minlp,b-logistics,SLAM,IoV,b-agriculture,none-river,a-constspeed2,liao2024energy}
+\printpartbibliography{GNmob1,GNmob2,GNmob3,GNmob4,b-DL,b-RL,hao-minlp,zhong-minlp,b-logistics,SLAM,IoV,b-agriculture,none-river,a-constspeed2,liao2024energy,Zeng,trans-rate}
