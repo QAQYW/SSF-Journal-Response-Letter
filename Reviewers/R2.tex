@@ -114,7 +114,26 @@
 	The difference between the transmission range model of Equation (17) and literature [35] is not fully explained, and the improvement points or advantages need to be clearly defined.
 \end{revcomment}
 \begin{revresponse}
-	
+	Thanks for the comment.
+	In~\cite{LAP}, the probability of LoS link is considered as a continuous function of elevation angle $\theta$.
+	However, we use Eq.~(\ref{eq:range}) to represent this radius-altitude relationship as a deterministic coverage abstraction, rather than as a probabilistic function.
+	We have revised the manuscript to clarify the motivation for employing this equation.
+	\begin{changes}
+		Based on the widely-used approximate funciton of LoS probability, the ground-to-UAV transmission range varies with flight altitude~\cite{LAP}.
+		Higher altitudes expand the UAV's field of view, increasing the likelihood of establishing a LoS link.
+		However, this also reduces the coverage radius.
+		Here, we use Eq.~(\ref{eq:range}) to represent this radius-altitude relationship as a deterministic coverage abstraction, rather than as a probabilistic function:
+		\begin{equation}
+		\begin{split}
+		\mu (\frac{x-x_0}{C_W}^2) & + ((\frac{x-x_0}{C_W})^2 + (\frac{y}{C_H})^2)^2 \\
+		& + 2\frac{y}{C_H}((\frac{x-x_0}{C_W})^2 + (\frac{y}{C_H})^2) = 0,
+		\end{split}
+		\label{eq:range}
+		\end{equation}
+		where $x_0$ is the deployment position of the snesor, $\mu$  is the swell coefficient influencing the shape of the data transmission range.
+		The width and height of the range are linearly related to the coefficients $C_W$ and $C_H$, respectively. And the quantitave relationship can be found in Appendix F of the supplementary material.
+		Although real-world sensor transmission ranges lack sharply defined boundaries, a deterministic coverage abstraction offers practical benefits by aligning with the radius-altitude variation trend and improving computational tractability.
+	\end{changes}
 \end{revresponse}
 
 \begin{revcomment}
@@ -266,4 +285,4 @@
 	\end{changes}
 \end{revresponse}
 
-\printpartbibliography{vertical-assumption,mgh,GNmob1,GNmob2,GNmob3,GNmob4}
+\printpartbibliography{vertical-assumption,mgh,GNmob1,GNmob2,GNmob3,GNmob4,LAP}
