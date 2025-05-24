@@ -5,7 +5,15 @@
 	This paper fails to justify the selection of heuristic factors $(\alpha, \beta)$ in SSF-ACO. You should conduct grid search experiments to demonstrate parameter sensitivity or cite theoretical foundations for ACO parameter tuning.
 \end{revcomment}
 \begin{revresponse}
-
+	Thank you for the comment.
+	We performed a grid-search over representative combinations of the pheromone exponential factor $\alpha\in\{1,2,3,4\}$ and heuristic exponential factor $\beta\in\{0,1,2,3,4\}$ to access parameter sensitivity as shown in Figure~\ref{fig:cali}.
+	The algorithm's performance under $\beta=0$ is significantly worse than performance for other parameter combinations. $\beta=0$ eliminates the use of heuristic information, resulting in purely random exploration during the initial iterations and thus poor performance.
+	The results also indicate that the configuration $\alpha=1,\beta=2$ consistently achieves the minimum energy consumption. Accordingly, we adopted $\alpha=1,\beta=2$ in all simulation experiments.
+	\begin{figure}[h]
+		\centerline{\includegraphics[width=.6\textwidth]{fig/cali.pdf}}
+		\caption{Performance of SSF-ACO across different $(\alpha,\beta)$ combinations.}
+		\label{fig:cali}
+	\end{figure}
 \end{revresponse}
 
 \begin{revcomment}
