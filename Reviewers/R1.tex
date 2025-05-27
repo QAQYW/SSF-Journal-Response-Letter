@@ -55,7 +55,7 @@
 	Based on the distance between the sensor and the UAV at the moment the response is received, the radius of the data transmission range can be estimated.
 	(3) The sensor position is fixed, and thus, it can be obtained during the initial deployment and periodic maintenance. This allows for the calibration of sensor positions.
 
-	\textbf{Discussion in the manuscript.}
+	\textbf{Discussion in the manuscript.} % todo 表明修改的是第二个点
 	We have extended the discussion of these assumptions in Section 6 of the revised manuscript as follows.
 	\begin{changes}
 		The UAV keeps broadcasting `Probe' message during the flight to detect sensors. Once receiving the `Probe' message, the sensor sends back an `ACK' message, which includes its position, the amount of data, and transmission characteristics. Note that each sensor sends `ACK' message only once. This partial information availability fundamentally changes the nature of our optimization problem, requiring real-time 
