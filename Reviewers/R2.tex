@@ -87,18 +87,25 @@
 	The vertical energy consumption is assumed to be linear related to the altitude difference, which seems oversimplified, more justification is needed.
 \end{revcomment}
 \begin{revresponse}
-	Thanks for the comment. % todo解释
-	We would like to clarify that the proposed algorithm is applicable to arbitrary forms of vertical energy consumption models to achieve more accurate energy estimations.
+	Thanks for the comment.
+	In our work, the vertical energy consumption is represented weight of edges in the constructed flight scheduling graph shown in Figure~\ref{fig:fsg}.
+	The total vertical energy consumption is the sum of the weights of the edges along the path, which starts from the starting vertex and ends at one of the destination vertices.
+
+	We now would like to clarify that the proposed algorithm is applicable to arbitrary forms of vertical energy consumption models by assigning corresponding weights to edges in the flight scheduling graph to achieve more accurate energy estimations.
 	The ``linear assumption'' adopted in the manuscript is intended solely to simplify computations and to maintain focus on the problem under study, rather than to deliberately obtain more favorable results.
 	We have added an explanation to the revised manuscript.
+
+	\begin{figure}[h]
+		\centerline{\includegraphics[width=.8\textwidth]{fig/FSG_MultiDest.pdf}}
+		\caption{Flight scheduling graph.}
+		\label{fig:fsg}
+	\end{figure}
 
 	\begin{changes}
 		Note that the proposed algorithm in Section~5 is applicable to more accurate vertical energy consumption models, and such assumption is only used to simplify computations.
 	\end{changes}
 
-	% todo 下面要不要保留
-	% todo 原文如果有改动，在这里加上
-	Moreover, research~\cite{vertical-assumption} serves as the theoretical basis for this ``linear assumption''.
+	Moreover, research~\cite{vertical-assumption,mgh} serves as the theoretical basis for this ``linear assumption''.
 	According to~\cite{vertical-assumption}, the following equation fits well with the theoretical derivation,
 	\begin{equation}
 		p_v = c_{0,v} + c_{1,v}v + c_{2,v}v^2,
@@ -157,7 +164,7 @@
 	We have revised the color scheme and marker symbols to make the curves in Figure 8 in the revised manuscript (Figure~\ref{fig:exps} in the following), and also adjusted the layout of it to improve clarity.
 	% ? 这里的图看着比原文中小，可能是左右页边距不同
 	\captionsetup[subfloat]{font=footnotesize, labelfont={rm}, textfont={rm}}
-	\begin{figure*}[h]
+	\begin{figure}[h]
 		\setcounter{subfigure}{0}
 		\subfloat[\footnotesize{The number of sensors.}]{
 			\centering
@@ -216,7 +223,7 @@
 		\captionsetup[subfloat]{labelformat=parens} % 恢复子图编号
 		\caption{Algorithm performance comparisons in UAV energy consumption.}
 		\label{fig:exps}
-	\end{figure*}
+	\end{figure}
 \end{revresponse}
 
 \begin{revcomment}
