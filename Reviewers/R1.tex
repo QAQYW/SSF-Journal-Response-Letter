@@ -51,12 +51,10 @@
 	Sensor knowledge mainly includes information such as position, amount of data to be collected, transmission rate, and data transmission range.
 	(1) In the online problem, each sensor has an additional control communication range, which covers a larger area than the data transmission range.
 	When the UAV enters the sensor's control communication range, it can detect the sensor and receives a response containing information such as the amount of data and the sensor's position.
+	We have explained this process in the revised manuscript as shown below.
 	(2) There is a proportional relationship between the radius of the data transmission range and the control communication range.
 	Based on the distance between the sensor and the UAV at the moment the response is received, the radius of the data transmission range can be estimated.
 	(3) The sensor position is fixed, and thus, it can be obtained during the initial deployment and periodic maintenance. This allows for the calibration of sensor positions.
-
-	\textbf{Discussion in the manuscript.} % todo 表明修改的是第二个点
-	We have extended the discussion of these assumptions in Section 6 of the revised manuscript as follows.
 	\begin{changes}
 		The UAV keeps broadcasting `Probe' message during the flight to detect sensors. Once receiving the `Probe' message, the sensor sends back an `ACK' message, which includes its position, the amount of data, and transmission characteristics. Note that each sensor sends `ACK' message only once. This partial information availability fundamentally changes the nature of our optimization problem, requiring real-time 
 		decision-making based on local information.
@@ -89,8 +87,6 @@
 \begin{revresponse}
 	Thank you for the comment.
 	We have carefully reviewed the tense usasge throughout the manuscript and corrected the inconsistent expressions to ensure consistency. Additionally, we have standardized the website reference format according to IEEE Reference Guide.
-	% todo 这里要不要把修改的部分复制过来
-	% todo 标明是哪几个[xx]
 \end{revresponse}
 
 \printpartbibliography{powerline,pipeline,transmission-line,river,coast,DJI-powerline,DJI-pipeline,DJI-river}
