@@ -85,9 +85,10 @@
 \newcommand{\editor}{
 	\clearpage
 	\@ifundefined{pdfbookmark}{}{%
-		\pdfbookmark[1]{Reponse to the Meta Review}{hyperref@editor}%
+		\pdfbookmark[1]{Response to the Meta Review}{hyperref@editor}%
 	}%
-	\section*{\textbf{Response to the Meta Review}}
+	% \section*{\textbf{Response to the Meta Review}}
+	\section*{\textbf{Response to the Editors}}
 }
 
 \newcommand{\reviewer}{
@@ -131,7 +132,7 @@
 % {\end{tcolorbox}}
 
 \newenvironment{changes}{
-\begin{tcolorbox}[breakable,left skip=0em,enhanced jigsaw, colframe={colorchangebg}, boxrule=0.1em, leftrule=0.1em, opacityback=0, opacityframe=1, arc=0pt]\color{colorchangetext}
+\begin{tcolorbox}[breakable,left skip=0em,enhanced jigsaw, colframe={colorchangebg}, boxrule=0.1em, leftrule=0.1em, opacityback=0, opacityframe=1, arc=0pt, before upper={\setlength{\parindent}{12pt}}]\color{colorchangetext}
 }
 {\end{tcolorbox}}
 
