@@ -101,7 +101,8 @@
 %%%
 
 %%% Blocks %%%
-\newenvironment{generalcomment}{%
+% \newenvironment{generalcomment}{%
+\newenvironment{metacomment}{%
 \refstepcounter{reviewcomment@counter}
 	\begin{tcolorbox}[adjusted title={Summary Comment \arabic{reviewcomment@counter}}, fonttitle={\bfseries}, enhanced jigsaw, colbacktitle={colorcommentframe},arc=0pt,boxrule=0em,opacityframe=0,colback={colorcommentbg}]
 }{\end{tcolorbox}}
@@ -117,8 +118,11 @@
 	\noindent\textbf{Response \arabic{reviewer@counter}.\arabic{reviewcomment@counter}:} \par
 }{\vspace{1em}}
 
-\newenvironment{revmeta}[1][{Thank you for the comment.}]{%
-	\textbf{Response S\arabic{reviewcomment@counter}:} #1\par
+% \newenvironment{revmeta}[1][{Thank you for the comment.}]{%
+% 	\textbf{Response S\arabic{reviewcomment@counter}:} #1\par
+% }{\vspace{1em}}
+\newenvironment{metaresponse}{%
+	\noindent\textbf{Response S\arabic{reviewcomment@counter}:} \par
 }{\vspace{1em}}
 
 % \newenvironment{changes}{
